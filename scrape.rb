@@ -9,7 +9,7 @@ require 'open-uri'
 #
 
 class Scraper
-  # Create a new Scraper
+  # Create a new Scraper.
   #
   # 'dir' is the directory in your home directory where you'll be storing the
   #   scraped images
