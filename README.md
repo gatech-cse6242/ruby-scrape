@@ -29,20 +29,20 @@ host = 'http://www.dermis.net'
 # Create a scraper
 scraper = Scraper.new({
   # Directory to place images in
-  dir: 'proj2',
+  dir: 'my_project',
   # Where we're scraping
   host: host,
   # Base path for most requests
   base_path: host + '/root_path',
   # Lambda containing a expression that will be evaluated for every search term
   #   to specify the search path
-  pattern: -> (term) { "en/list/#{term}/search.htm" },
+  pattern: -> (term) { "results/#{term}/search" },
   # List of terms
   terms: terms,
   # Strings specifying the location of relevant nodes in the DOM
-  result_links: '#ctl00_Main_pnlSearchControl a/@href',
-  result_images: '#ctl00_Main_pnlImages a/@href',
-  target_images: '#ctl00_Main_pnlMain .zoom a>img/@src'
+  result_links: '#maindiv a/@href',
+  result_images: '#maindiv a/@href',
+  target_images: '#maindiv .important a>img/@src'
 })
 
 # Let's scrape.
